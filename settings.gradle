@@ -1,1 +1,3 @@
 rootProject.name = 'ValthorneProjectBuilder'
+
+var lwjglVersion = '1.1.2'
