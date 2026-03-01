@@ -440,7 +440,6 @@ public class Application implements valthorne.Application {
                     .replace("PACKAGE_NAME", pkgName)
                     .replace("PROJECT_NAME", projName)
                     .replace("APPLICATION_CLASS", appClass)
-                    .replace("VALTHORNE_VERSION", Global.VALTHORNE_VERSION)
                     .replace("SOURCE_DIRECTORY", pkgName.replace(".", "/"));
 
             String settingsGradleTemplate = ValthorneFiles.readString(TEMPLATE_SETTINGS_GRADLE)

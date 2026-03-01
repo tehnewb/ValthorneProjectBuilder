@@ -55,7 +55,6 @@ public class SwingLauncher {
     private static final String TEMPLATE_APPLICATION = TEMPLATE_ROOT + "/template_application.java"; // Template file for the generated Application class.
     private static final String TEMPLATE_LAUNCHER = TEMPLATE_ROOT + "/template_launcher.java"; // Template file for the generated Launcher class.
 
-    private static final String VALTHORNE_VERSION = "REPLACE_ME"; // Engine version token substituted into generated build files.
     private static final Charset UTF8 = StandardCharsets.UTF_8; // Charset used for reading and writing templates/output files.
 
     private JFrame frame; // Main application window.
@@ -667,7 +666,6 @@ public class SwingLauncher {
                 .replace("PACKAGE_NAME", pkgName)
                 .replace("PROJECT_NAME", projName)
                 .replace("APPLICATION_CLASS", appClass)
-                .replace("VALTHORNE_VERSION", VALTHORNE_VERSION)
                 .replace("SOURCE_DIRECTORY", pkgName.replace(".", "/"));
 
         String settingsGradleTemplate = readTemplate(TEMPLATE_SETTINGS_GRADLE)
