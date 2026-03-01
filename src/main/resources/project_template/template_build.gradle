@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'io.github.fourlastor.construo' version '2.1.0'
+    id 'com.gradleup.shadow' version '9.3.1'
+}
+
+group = 'PACKAGE_NAME'
+version = '1.0'
+ext.projectName = 'PROJECT_NAME'
+
+application {
+    mainClass = 'PACKAGE_NAME.Launcher'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.github.tehnewb:Valthorne:VALTHORNE_VERSION'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['assets']
+        }
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
+tasks.named('shadowJar').configure {
+    archiveClassifier.set('')
+    mergeServiceFiles()
+    exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA'
+    exclude 'javax/sound/**'
+}
+
+tasks.named('build').configure {
+    dependsOn tasks.named('shadowJar')
+}
+
+construo {
+    name.set(projectName)
+    humanName.set(projectName)
+    jarTask.set('shadowJar')
+    outputDir.set(rootProject.file('distribution'))
+
+    targets {
+        create('winX64', io.github.fourlastor.construo.Target.Windows) {
+            architecture.set(io.github.fourlastor.construo.Target.Architecture.X86_64)
+            jdkUrl.set('https://github.com/adoptium/temurin23-binaries/releases/download/jdk-23.0.2%2B7/OpenJDK23U-jdk_x64_windows_hotspot_23.0.2_7.zip')
+        }
+    }
+}
