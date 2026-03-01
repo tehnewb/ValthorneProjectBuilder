@@ -18,6 +18,8 @@ repositories {
 
 dependencies {
     implementation 'io.github.tehnewb:Valthorne:1.1.2'
+    implementation 'com.formdev:flatlaf:3.4.1'
+    implementation 'com.formdev:flatlaf-intellij-themes:3.4.1'
 }
 
 java {

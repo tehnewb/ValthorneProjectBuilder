@@ -1,6 +1,5 @@
 package io.github.tehnewb;
 
-import valthorne.Application;
 import valthorne.JGL;
 import valthorne.Window;
 import valthorne.asset.Assets;
@@ -59,7 +58,7 @@ import java.util.concurrent.CompletableFuture;
  * @author Albert Beaupre
  * @since March 1st, 2026
  */
-public class ProjectBuilderApplication implements Application {
+public class Application implements valthorne.Application {
 
     private static final String TEMPLATE_ROOT = "project_template"; // Root folder that contains all project template files.
     private static final String TEMPLATE_BUILD_GRADLE = TEMPLATE_ROOT + "/template_build.gradle"; // Template path for build.gradle content.
@@ -100,7 +99,7 @@ public class ProjectBuilderApplication implements Application {
         ui = new UI();
         ui.setViewport(viewport);
 
-        Assets.prepare(FontParameters.fromClasspath("ui/font.ttf", "font", 18));
+        Assets.prepare(FontParameters.fromClasspath("ui/font.ttf", "font", 20));
         Assets.prepare(TextureParameters.fromClasspath("ui/background.png", "background"));
         Assets.prepare(TextureParameters.fromClasspath("ui/textfield-focused.png", "textfield-focused"));
         Assets.prepare(TextureParameters.fromClasspath("ui/textfield-unfocused.png", "textfield-unfocused"));
