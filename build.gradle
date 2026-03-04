@@ -12,18 +12,41 @@ application {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-    implementation 'io.github.tehnewb:Valthorne:1.1.2'
+    implementation 'io.github.tehnewb:Valthorne:1.1.3'
     implementation 'com.formdev:flatlaf:3.4.1'
     implementation 'com.formdev:flatlaf-intellij-themes:3.4.1'
 }
 
 java {
-    toolchain { languageVersion = JavaLanguageVersion.of(23) }
+    toolchain { languageVersion = JavaLanguageVersion.of(25) }
+}
+
+// ---- Java 25 LWJGL warning suppression / compatibility JVM args ----
+def lwjglJvmArgs = [
+        // Required for Java 21+ restricted native access warnings
+        "--enable-native-access=ALL-UNNAMED",
+
+        // Opens commonly needed by LWJGL / Unsafe / internal buffers
+        "--add-opens=java.base/java.lang=ALL-UNNAMED",
+        "--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED",
+        "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED",
+
+        // Silences many "illegal access" warning prints on newer JDKs (best-effort)
+        "-Djdk.module.illegalAccess.silent=true"
+]
+
+// Apply to any JavaExec tasks (e.g., application plugin's run task, custom runners)
+tasks.withType(JavaExec).configureEach {
+    jvmArgs += lwjglJvmArgs
+}
+
+// Apply to all tests
+tasks.withType(Test).configureEach {
+    jvmArgs += lwjglJvmArgs
 }
 
 tasks.named("shadowJar").configure {

@@ -99,7 +99,7 @@ public class Application implements valthorne.Application {
         ui = new UI();
         ui.setViewport(viewport);
 
-        Assets.prepare(FontParameters.fromClasspath("ui/font.ttf", "font", 20));
+        Assets.prepare(FontParameters.fromClasspath("ui/font.ttf", "font", 18));
         Assets.prepare(TextureParameters.fromClasspath("ui/background.png", "background"));
         Assets.prepare(TextureParameters.fromClasspath("ui/textfield-focused.png", "textfield-focused"));
         Assets.prepare(TextureParameters.fromClasspath("ui/textfield-unfocused.png", "textfield-unfocused"));
