@@ -32,7 +32,6 @@ MyGameProject/
 │  └─ PACKAGE_NAME/
 │     ├─ Launcher.java             → Contains the `main` that boots JGL/Valthorne
 │     └─ MAIN_CLASS.java           → Your game `Application` implementation
-└─ distribution/                   → Output for native distributables (if you build them)
 ```
 
 Notes:
