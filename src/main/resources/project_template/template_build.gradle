@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.github.tehnewb:Valthorne:1.2.1'
+    implementation 'io.github.tehnewb:Valthorne:1.2.2'
 }
 
 sourceSets {
