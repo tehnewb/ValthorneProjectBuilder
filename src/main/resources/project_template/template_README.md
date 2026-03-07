@@ -13,14 +13,14 @@ It uses:
 
 ## Requirements
 
-- **Java 23**
+- **Java 25**
 - **Git** (optional but recommended)
 - Terminal:
     - Windows → PowerShell
     - macOS / Linux → Terminal
 
 > If Gradle toolchains are configured correctly, Gradle will automatically use or download the required JDK.
-> If not, install Java 23 and ensure `JAVA_HOME` is set correctly.
+> If not, install Java 25 and ensure `JAVA_HOME` is set correctly.
 
 ---
 
@@ -150,7 +150,7 @@ chmod +x gradlew
 java -version
 ```
 
-Ensure Java 23 is installed and available in your PATH.
+Ensure Java 25 is installed and available in your PATH.
 
 ---
 
