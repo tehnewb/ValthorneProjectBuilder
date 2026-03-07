@@ -69,6 +69,7 @@ public class Application implements valthorne.Application {
     private static final String TEMPLATE_LAUNCHER = TEMPLATE_ROOT + "/template_launcher.java"; // Template path for the generated Launcher class.
 
     private UI ui; // Root UI container for the builder screen.
+    private TextureBatch batch;
 
     /**
      * Initializes the builder UI, loads assets, and wires event handlers.
@@ -85,6 +86,7 @@ public class Application implements valthorne.Application {
      */
     @Override
     public void init() {
+        batch = new TextureBatch(4096);
         Window.setResizable(false);
 
         Assets.loadAsync(TextureParameters.fromClasspath("icons/96.png", "icon", false), TextureData.class)
@@ -209,7 +211,9 @@ public class Application implements valthorne.Application {
      */
     @Override
     public void render() {
-        ui.draw();
+        batch.begin();
+        ui.draw(batch);
+        batch.end();
     }
 
     /**

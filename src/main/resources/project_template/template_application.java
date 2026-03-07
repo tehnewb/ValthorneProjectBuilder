@@ -1,26 +1,27 @@
 package PACKAGE_NAME;
 
-import valthorne.Application;
+import valthorne.graphics.texture.TextureBatch;
+import valthorne.scene.Scene;
 
-public class APPLICATION_CLASS implements Application {
+public class APPLICATION_CLASS extends Scene {
 
     @Override
     public void init() {
-
+        // Initialize here
     }
 
     @Override
-    public void render() {
-        // Draw here.
+    public void render(TextureBatch batch) {
+        // Draw here
     }
 
     @Override
     public void update(float delta) {
-        // Update here.
+        // Update here
     }
 
     @Override
     public void dispose() {
-        // Cleanup here.
+        // Cleanup here
     }
 }
