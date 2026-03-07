@@ -90,8 +90,8 @@ The Builder replaces them using the values you enter in the GUI along with its o
 - Does the generated project work on macOS/Linux?
   Yes. Development commands (`gradlew run`, `shadowJar`) are cross‑platform. The included native packaging example targets Windows x64 via Construo; you can add additional targets as needed.
 
-- Which Java version should I code against?
-  Java 23. The template configures Gradle toolchains accordingly.
+- Which Java version should I code against?3
+  Java 25. The template configures Gradle toolchains accordingly.
 
 ---
 
