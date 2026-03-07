@@ -32,12 +32,11 @@ MyGameProject/
 │  └─ PACKAGE_NAME/
 │     ├─ Launcher.java             → Contains the `main` that boots JGL/Valthorne
 │     └─ MAIN_CLASS.java           → Your game `Application` implementation
-└─ distribution/                   → Output for native distributables (if you build them)
 ```
 
 Notes:
 - The exact layout may evolve slightly as templates improve; consult the generated `README.md` for authoritative instructions inside your new project.
-- Java 23 is configured via Gradle toolchains in the template. You don't have to manage JAVA_HOME manually if you let Gradle handle it.
+- Java 25 is configured via Gradle toolchains in the template. You don't have to manage JAVA_HOME manually if you let Gradle handle it.
 
 ---
 
@@ -65,16 +64,6 @@ The Builder replaces them using the values you enter in the GUI along with its o
 
 ---
 
-## Versioning
-
-- Builder version: see `src/main/java/io/github/tehnewb/Global.java` → `VERSION`.
-- Default Valthorne version used for generated projects: `Global.VALTHORNE_VERSION` (currently 1.1.1).
-- Java toolchain: 23 (configured in Gradle).
-
-Generated projects target the same Valthorne version to ensure compatibility with the templates.
-
----
-
 ## Troubleshooting
 
 - Gradle wrapper permission denied (macOS/Linux):
@@ -85,7 +74,7 @@ Generated projects target the same Valthorne version to ensure compatibility wit
   ```bash
   java -version
   ```
-  Install JDK 23 and/or ensure your PATH and `JAVA_HOME` are set. Or allow Gradle toolchains to download JDK 23.
+  Install JDK 25 and/or ensure your PATH and `JAVA_HOME` are set. Or allow Gradle toolchains to download JDK 25.
 - Paths with spaces on Windows:
   Use quotes, e.g., `"C:/Users/you/My Projects"`.
 - Antivirus/quarantine prevents running the jar:
