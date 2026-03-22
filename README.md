@@ -23,8 +23,9 @@ The builder copies a set of templates and replaces placeholders like `PROJECT_NA
 
 ```
 MyGameProject/
+├─ gradle.properties               → Holds necessary gradle properties
 ├─ settings.gradle                 → Sets the Gradle project name
-├─ build.gradle                    → Dependencies + ShadowJar + (optionally) Construo config
+├─ build.gradle                    → Dependencies + ShadowJar + Construo config
 ├─ .gitignore                      → Standard ignores for Gradle/Java projects
 ├─ README.md                       → Quick start for your new project
 ├─ assets/                         → Place runtime assets here (if present in template)
