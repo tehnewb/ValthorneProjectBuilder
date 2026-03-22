@@ -10,9 +10,10 @@ public class APPLICATION_CLASS extends Scene {
         // Initialize here
     }
 
+
     @Override
-    public void render(TextureBatch batch) {
-        // Draw here
+    public void draw(TextureBatch batch) {
+        // Draw stuff here
     }
 
     @Override
