@@ -30,6 +30,7 @@ public class Application implements valthorne.Application {
     private static final String TEMPLATE_README = TEMPLATE_ROOT + "/template_README.md";
     private static final String TEMPLATE_APPLICATION = TEMPLATE_ROOT + "/template_application.java";
     private static final String TEMPLATE_LAUNCHER = TEMPLATE_ROOT + "/template_launcher.java";
+    private static final String TEMPLATE_WRAPPER_DIR = TEMPLATE_ROOT + "/gradle/wrapper";
 
     private UIRoot ui;
     private Viewport viewport;
@@ -357,6 +358,15 @@ public class Application implements valthorne.Application {
                 Files.writeString(root.resolve("README.md"), readmeTemplate);
                 Files.writeString(javaDir.resolve(appClass + ".java"), applicationTemplate);
                 Files.writeString(javaDir.resolve("Launcher.java"), launcherTemplate);
+
+                Path gradleDir = root.resolve("gradle/wrapper");
+                Files.createDirectories(gradleDir);
+
+                byte[] jar = ValthorneFiles.readBytes(TEMPLATE_WRAPPER_DIR + "/gradle-wrapper.jar");
+                byte[] props = ValthorneFiles.readBytes(TEMPLATE_WRAPPER_DIR + "/gradle-wrapper.properties");
+
+                Files.write(gradleDir.resolve("gradle-wrapper.jar"), jar);
+                Files.write(gradleDir.resolve("gradle-wrapper.properties"), props);
             } catch (Exception e) {
                 return "Error: Failed to build project: " + e.getMessage();
             }
