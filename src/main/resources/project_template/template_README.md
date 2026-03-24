@@ -159,7 +159,7 @@ Ensure Java 25 is installed and available in your PATH.
 Your entry point is:
 
 ```
-src/main/java/PACKAGE_NAME/MAIN_CLASS.java
+src/main/java/PACKAGE_NAME/Launcher.java
 ```
 
 Implement:
